@@ -1,0 +1,70 @@
+.app-container {
+  /* text-align: center; */
+  padding: 20px;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.app-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.app-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 20px;
+}
+
+.output-container {
+  width: 300px;
+  padding: 10px;
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border-radius: 8px;
+  text-align: left;
+  overflow-y: auto;
+}
+
+.output-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.output-result {
+  font-family: "Courier New", Courier, monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.loading-text {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+.run-button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #61dafb;
+  color: #282c34;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.run-button:hover {
+  background-color: #21a1f1;
+}
+
+.run-button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
