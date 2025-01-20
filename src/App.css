@@ -15,24 +15,32 @@
   margin-bottom: 20px;
 }
 
+.monaco-editor-container {
+  flex-grow: 1;
+  min-width: 300px; /* Set a minimum width */
+}
 .app-content {
   display: flex;
+  height: 600px;
   justify-content: space-between;
   width: 100%;
-  max-width: 1200px;
-  margin-bottom: 20px;
 }
-
 .output-container {
-  width: 300px;
+  width: 600px;
+  resize: horizontal;
+  overflow: auto;
+  min-width: 200px; /* Minimum width to prevent collapse */
   padding: 10px;
-  background-color: #1e1e1e;
-  color: #ffffff;
-  border-radius: 8px;
-  text-align: left;
-  overflow-y: auto;
+  border-left: 2px solid #ddd;
+  background-color: black;
 }
-
+.resizer {
+  width: 5px;
+  cursor: ew-resize;
+  background-color: #ddd;
+  position: relative;
+  z-index: 1;
+}
 .output-title {
   font-size: 1.2rem;
   margin-bottom: 10px;
@@ -50,7 +58,9 @@
 }
 
 .run-button {
-  padding: 10px 20px;
+  margin-left: 52pc;
+  margin-bottom: 2pc;
+  /* margin: 10px 20px; */
   font-size: 1.2rem;
   background-color: #61dafb;
   color: #282c34;
