@@ -1,6 +1,14 @@
+const api = "https://jsonplaceholder.typicode.com/posts";
 
-const arr =[1,2,3,4,5];
-const doubledelements = arr.map((element) =>{
-    return element*2;
-})
-console.log("Result :" , doubledelements);
+const fetchData = async () => {
+  try {
+    const response = await fetch(api);
+    const data = await response.json();
+    const filteredData = data.filter((item) => item.userId !== 10);
+    console.log(filteredData.length); // Logs the number of objects with userId 10
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+
+fetchData();

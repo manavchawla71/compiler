@@ -44,9 +44,12 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="app-title">Online JavaScript Compiler</h1>
+      <button className="run-button" onClick={handleRunCode} disabled={loading}>
+        {loading ? "Running..." : "Run"}
+      </button>
       <div className="app-content">
         <MonacoEditor
-          width="1000"
+          width="900"
           height="600"
           language="javascript"
           theme="vs-dark"
@@ -57,7 +60,7 @@ function App() {
             minimap: { enabled: false }, // Disable minimap if it's not needed
             lineNumbers: "on", // Ensure line numbers are on
             scrollBeyondLastLine: false, // Prevent scrolling beyond the last line
-            padding: { top: 10, bottom: 10 }, // Add padding to prevent text from starting in the middle
+            padding: { top: 0, bottom: 0 }, // Add padding to prevent text from starting in the middle
             automaticLayout: true, // Automatically adjust layout
           }}
         />
@@ -67,9 +70,6 @@ function App() {
           {loading && <p className="loading-text">Loading...</p>}
         </div>
       </div>
-      <button className="run-button" onClick={handleRunCode} disabled={loading}>
-        {loading ? "Running..." : "Run"}
-      </button>
     </div>
   );
 }
