@@ -10,9 +10,13 @@
   color: white;
 }
 
+.navbar {
+  display: flex;
+  /* align-items: center; */
+}
 .app-title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  /* font-size: 2.5rem; */
+  /* margin-bottom: 20px; */
 }
 
 .monaco-editor-container {

@@ -23,7 +23,7 @@ app.post("/run", (req, res) => {
     // res.json({ output: "Code executed successfully!" });
   });
 });
-
-app.listen(3000, () => {
-  console.log("server listening on 3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

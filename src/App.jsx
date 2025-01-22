@@ -21,7 +21,7 @@ function App() {
 
   const handleRunCode = () => {
     setLoading(true);
-    fetch("http://localhost:3000/run", {
+    fetch("https://compiler-2-donp.onrender.com/run", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ code }),
@@ -67,13 +67,14 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="app-title">Online JavaScript Compiler</h1>
+
       <button className="run-button" onClick={handleRunCode} disabled={loading}>
         {loading ? (
           "Running..."
         ) : (
-          <>
+          <div style={{ padding: "0.5pc" }}>
             Run <VscDebugStart />
-          </>
+          </div>
         )}
       </button>
       <div className="app-content">
