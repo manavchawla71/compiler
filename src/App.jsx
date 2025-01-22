@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import MonacoEditor from "react-monaco-editor";
-import { DeviceFrameset } from "react-device-frameset";
-import "react-device-frameset/styles/marvel-devices.min.css";
 import { VscDebugStart } from "react-icons/vsc";
 import "./App.css";
 
@@ -67,55 +65,47 @@ function App() {
   };
 
   return (
-    <div className="app-wrapper">
-      <DeviceFrameset device="MacBook Pro">
-        <div className="app-container">
-          <h1 className="app-title">Online JavaScript Compiler</h1>
+    <div className="app-container">
+      <h1 className="app-title">Online JavaScript Compiler</h1>
 
-          <button
-            className="run-button"
-            onClick={handleRunCode}
-            disabled={loading}
-          >
-            {loading ? (
-              "Running..."
-            ) : (
-              <div style={{ padding: "0.5pc" }}>
-                Run <VscDebugStart />
-              </div>
-            )}
-          </button>
-          <div className="app-content">
-            <div
-              className="monaco-editor-container"
-              style={{ width: `${editorWidth}px` }}
-            >
-              <MonacoEditor
-                width="100%"
-                height="100%"
-                language="javascript"
-                theme="vs-dark"
-                value={code}
-                onChange={handleEditorChange}
-                editorDidMount={editorDidMount}
-                options={{
-                  minimap: { enabled: false },
-                  lineNumbers: "on",
-                  scrollBeyondLastLine: false,
-                  padding: { top: 0, bottom: 0 },
-                  automaticLayout: true,
-                }}
-              />
-            </div>
-            <div className="resizer" onMouseDown={handleMouseDown}></div>
-            <div className="output-container">
-              <p className="output-title">Output:</p>
-              <pre className="output-result">{result}</pre>
-              {loading && <p className="loading-text">Loading...</p>}
-            </div>
+      <button className="run-button" onClick={handleRunCode} disabled={loading}>
+        {loading ? (
+          "Running..."
+        ) : (
+          <div style={{ padding: "0.5pc" }}>
+            Run <VscDebugStart />
           </div>
+        )}
+      </button>
+      <div className="app-content">
+        <div
+          className="monaco-editor-container"
+          style={{ width: `${editorWidth}px` }}
+        >
+          <MonacoEditor
+            width="100%"
+            height="100%"
+            language="javascript"
+            theme="vs-dark"
+            value={code}
+            onChange={handleEditorChange}
+            editorDidMount={editorDidMount}
+            options={{
+              minimap: { enabled: false },
+              lineNumbers: "on",
+              scrollBeyondLastLine: false,
+              padding: { top: 0, bottom: 0 },
+              automaticLayout: true,
+            }}
+          />
         </div>
-      </DeviceFrameset>
+        <div className="resizer" onMouseDown={handleMouseDown}></div>
+        <div className="output-container">
+          <p className="output-title">Output:</p>
+          <pre className="output-result">{result}</pre>
+          {loading && <p className="loading-text">Loading...</p>}
+        </div>
+      </div>
     </div>
   );
 }
