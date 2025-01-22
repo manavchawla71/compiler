@@ -1,9 +1,5 @@
 # **React + Vite Online JavaScript Compiler**
 
-<div align="center">
-  <img alt="App Demo" src="./public/abc.png" width="700" />
-</div>
-
 ---
 
 ### 🌟 **Live Demo**
